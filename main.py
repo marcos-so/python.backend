@@ -1,15 +1,15 @@
 def main():
-    userId = 101
-    nome = "Marcos"
-    email = "marcos.souza@example.com"
-    ativo = True
-    tags = ["admin", "backend", "api"]
+    user_id = 1
+    user_name = "Marcos"
+    user_email = "marcos.souza@example.com"
+    active_account = True
+    user_tags = ["admin", "backend", "api", "user"]
 
-    print("ID:", userId)
-    print("Nome:", nome)
-    print("Email:", email)
-    print("Ativo:", ativo)
-    print("Tags:", tags)
+    profile = create_user(user_name, 30)
+
+    def create_user(name: str, age: int) -> dict[str, int]:
+        return {"name": name, "age": age}
+
 
 
 if __name__ == "__main__":
