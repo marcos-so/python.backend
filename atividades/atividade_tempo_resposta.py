@@ -1,10 +1,13 @@
 tempos_resposta = [50, 120, 450, 1200, 80, 950]
 for tempo in tempos_resposta:
+    classificacao = ""
     if tempo <= 50:
-        print(f"{tempo}ms: Excelente")
+        classificacao = "Excelente"
     elif tempo <= 120:
-        print(f"{tempo}ms: Bom")
+        classificacao = "Bom"
     elif tempo <= 450:
-        print(f"{tempo}ms: Médio")
+        classificacao = "Médio"
     else:
-        print(f"{tempo}ms: Lento")
+        classificacao = "Lento"
+
+    print(f"{tempo}ms: {classificacao}")
