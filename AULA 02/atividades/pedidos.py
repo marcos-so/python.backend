@@ -10,8 +10,11 @@ pedidos = [
 ]
 
 pendentes = [pedido for pedido in pedidos if pedido[3] == 'pendente']
-valor_total = sum(pedido[2] for pedido in pedidos)
-clientes_mais_pedidos = max(set(pedido[1] for pedido in pedidos), key=lambda cliente: sum(1 for pedido in pedidos if pedido[1] == cliente))
+valor_total = sum(pedido[2] for pedido in pedidos if pedido[3] != 'cancelado')
+# clientes_mais_pedidos = max(set(pedido[1] for pedido in pedidos), key=lambda cliente: sum(1 for pedido in pedidos if pedido[1] == cliente))
+
+from collections import Counter
+cliente_pedidos = Counter(p[1] for p in pedidos.most_commom(1)[0][0])
 
 print(f"Pedidos pendentes: {pendentes}")
 print(f"Valor total dos pedidos: R$ {valor_total:.2f}")
